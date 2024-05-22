@@ -18,10 +18,13 @@ const todoSlice = createSlice({
             if (todo) {
                 todo.text = text;
             }
-        }
+        },
+        setTodos: (state, action) => {
+            state.list = action.payload;
+        } 
     },
 });
 
-export const { addTodo, removeTodo, editTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, editTodo, setTodos } = todoSlice.actions;
 
 export default todoSlice.reducer;
