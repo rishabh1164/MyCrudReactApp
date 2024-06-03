@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from './features/todo/todoSlice';
 import './styles.css';
@@ -19,12 +19,14 @@ const formReducer = (state, action) => {
 }
 const AddTodoForm = () => {
     const [state, dispatch] = useReducer(formReducer, initialFormState);
+    const [todosCount, setTodosCount] = useState(15);
     const reduxDispatch = useDispatch();
  
     const handleSubmit = (e) => {
         e.preventDefault();
         if (state.text.trim() === '') return;
-        reduxDispatch(addTodo({ id: Date.now(), text: state.text }));
+        reduxDispatch(addTodo({ id: todosCount + 1, title: state.text, completed: false }));
+        setTodosCount(todosCount + 1);
         dispatch({ type: 'RESET' });
     }
  

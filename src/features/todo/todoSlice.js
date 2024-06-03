@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { time } from 'highcharts';
 
 const todoSlice = createSlice({
     name: 'todos',
@@ -13,10 +14,10 @@ const todoSlice = createSlice({
             state.list = state.list.filter(todo => todo.id !== action.payload);
         },
         editTodo: (state, action) => {
-            const { id, text } = action.payload;
+            const { id, title } = action.payload;
             const todo = state.list.find(todo => todo.id === id);
             if (todo) {
-                todo.text = text;
+                todo.title = title;
             }
         },
         setTodos: (state, action) => {

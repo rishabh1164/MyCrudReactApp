@@ -7,6 +7,13 @@ import AddTodoForm from '../AddTodoForm';
 import todoReducer, { addTodo } from '../features/todo/todoSlice';
 import TodoList from '../TodoList';
 
+const todos = [
+    {
+        id: 1 ,
+    },
+
+]
+
 
 describe('Tests for App', () => {
 
