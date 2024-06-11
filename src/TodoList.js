@@ -79,7 +79,7 @@ const TodoList = () => {
         const isEditing = state.editId === params.data.id;
         return isEditing ? (
           <input
-          ref={(el) => (editInputRefs.current[params.data.id] = el)}
+            ref={(el) => (editInputRefs.current[params.data.id] = el)}
             type="text"
             value={state.editText}
             onChange={(e) => dispatch({ type: 'SET_EDIT_TEXT', payload: e.target.value })}
@@ -109,16 +109,6 @@ const TodoList = () => {
       },
     }
   ], [state.editId, state.editText, handleEdit, handleSave, reduxDispatch]);
-
-  // const onCellEditingStopped = useCallback((event) => {
-  //   if (state.editId === event.data.id) {
-  //     reduxDispatch(editTodo({
-  //       id: state.editId,
-  //       title: state.editText,
-  //     }));
-  //     dispatch({ type: 'RESET' });
-  //   }
-  // }, [state.editId, state.editText, reduxDispatch]);
 
 
   return (

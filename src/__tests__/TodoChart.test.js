@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import TodoChart from '../TodoChart';
 import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
 
 const mockStore = configureStore([]);
 describe('TodoChart Component', () => {
@@ -51,8 +50,6 @@ describe('TodoChart Component', () => {
         <TodoChart />
       </Provider>
     );
-    // console.log('HighCharts.charts=>', Highcharts.charts);
-    // await waitFor(() =>  console.log('Highcharts 3 -> ', Highcharts.charts));
 
     const completedSeries = Highcharts.charts[2].series.find(
       series => series.name === 'Completed Todos'
