@@ -2,6 +2,8 @@ import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
 import TodoChart from './TodoChart';
 import './styles.css';
+import TrafficDistributionPieChart from './TrafficDistributionPieChart';
+
 const App = () => {
   return (
     <div className='app-container'>
@@ -9,6 +11,7 @@ const App = () => {
       <AddTodoForm />
       <TodoList />
       <TodoChart />
+      <TrafficDistributionPieChart />
     </div>
   );
 }
